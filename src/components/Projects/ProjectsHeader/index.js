@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 import './index.css';
 
 const ProjectsHeader = props => (
@@ -6,9 +7,9 @@ const ProjectsHeader = props => (
         <h1>
             {props.title}
         </h1>
-        <button>
+        <Button>
             {props.buttonText}
-        </button>
+        </Button>
     </div>
 );
 
