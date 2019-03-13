@@ -1,16 +1,16 @@
 import React from 'react';
 import './index.css';
 
-const Header = () => (
+const Header = (props) => (
     <header className='Header'>
         <a href="/">
-            PROJECT MANAGER
+            {props.title.toUpperCase()}
         </a>
         <nav>
             <ul>    
                 <li>
                     <a href="/">
-                        projects
+                        {props.nav}
                     </a>
                 </li>
             </ul>
