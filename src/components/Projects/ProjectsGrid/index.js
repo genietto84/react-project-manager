@@ -3,15 +3,19 @@ import { ProjectCard } from '../../_common';
 import './index.css';
 import projects from './projects';
 
-const ProjectsGrid = props => (
-    <div className='ProjectsGrid'>
-        {projects.map(item => (
-            <ProjectCard
-                item = {item}
-                key = {item.id}
-            />
-        ))}
-    </div>
-);
+class ProjectsGrid extends React.Component {
+    render() {
+        return (
+            <div className='ProjectsGrid'>
+                {projects.map(item => (
+                    <ProjectCard
+                        item = {item}
+                        key = {item.id}
+                    />
+                ))}
+            </div>
+        )
+    }
+}
 
 export default ProjectsGrid;
