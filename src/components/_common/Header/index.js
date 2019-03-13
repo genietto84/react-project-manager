@@ -1,20 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import './index.css';
 
 const Header = () => (
-    <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Learn React
+    <header className='Header'>
+        <a href="/">
+            PROJECT MANAGER
         </a>
+        <nav>
+            <ul>    
+                <li>
+                    <a href="/">
+                        projects
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 );
 

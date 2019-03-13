@@ -1,0 +1,30 @@
+.Header {
+    background-color: #282c34;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.Header > a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #61dafb;
+    padding: 30px;
+    text-decoration: none;
+}
+.Header > nav > ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.Header > nav > ul > li > a {
+    margin-left: 20px;
+    color: white;
+    padding: 30px;
+    text-decoration: none;
+}
+.Header > nav > ul > li > a:hover {
+    color: #61dafb;
+}
