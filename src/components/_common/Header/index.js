@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-const Header = (props) => (
+const Header = props => (
     <header className='Header'>
         <a href="/">
             {props.title.toUpperCase()}

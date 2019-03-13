@@ -1,0 +1,8 @@
+.App > .content {
+    display: flex;
+    justify-content: center;
+}
+.App > .content > .wrapper {
+    width: 1024px;
+    margin: 50px;
+}
