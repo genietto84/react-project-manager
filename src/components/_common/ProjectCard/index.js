@@ -24,7 +24,7 @@ const ProjectCard = props => {
                 </Card.Description>
             </Card.Content>
             <Card.Content>
-                <Button fluid>
+                <Button fluid onClick={props.handleClick}>
                     Fai Qualcosa
                 </Button>
             </Card.Content>
