@@ -9,7 +9,15 @@ class ProjectsGrid extends React.Component {
         this.state = { projects };
     }
     handleClick = project => () => {
-        console.log(this, project)
+        const projects = this.state.projects.map(item => {
+            if (item.id === project.id)
+                return {
+                    ...item,
+                    done: !item.done
+                }
+            else return item;
+        });
+        this.setState({ projects});
     }
     render() {
         return (

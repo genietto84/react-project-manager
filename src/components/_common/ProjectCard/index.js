@@ -10,8 +10,9 @@ const getDate = (start, end) => {
 
 const ProjectCard = props => {
     if (!props.item) return null;
+    const color = props.item.done ? 'green' : null;
     return (
-        <Card className='ProjectCard'>
+        <Card className='ProjectCard' color={color}>
             <Card.Content>
                 <Card.Header>
                     {props.item.name}
@@ -24,8 +25,8 @@ const ProjectCard = props => {
                 </Card.Description>
             </Card.Content>
             <Card.Content>
-                <Button fluid onClick={props.handleClick}>
-                    Fai Qualcosa
+                <Button fluid onClick={props.handleClick} color={color}>
+                    Switch stato
                 </Button>
             </Card.Content>
         </Card>
