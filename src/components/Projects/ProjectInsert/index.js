@@ -8,7 +8,8 @@ class ProjectInsert extends Component {
         this.state = {
             name: '',
             priority: '',
-            description: ''
+            description: '',
+            start: ''
         }
     }
     handleChange = event => {
@@ -63,6 +64,19 @@ class ProjectInsert extends Component {
                                 <textarea
                                     name='description'
                                     value={this.state.description}
+                                    onChange={this.handleChange}
+                                    required
+                                />
+                            </label>
+                        </div>
+
+                        <div className="field">
+                            <label>
+                                Start:
+                                <input
+                                    type="date"
+                                    name='start'
+                                    value={this.state.start}
                                     onChange={this.handleChange}
                                     required
                                 />
