@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react';
-import './index.css';
+import { ProjectForm } from '../../_common';
 
 class ProjectInsert extends Component {
     constructor(props) {
@@ -24,76 +23,16 @@ class ProjectInsert extends Component {
             id: Math.random().toString(36).replace('0.', '').substring(2, 9),
             ...this.state
         };
-        this.props.addProject(item)
+        this.props.addProject(item);
     }
     render() {
         return (
             <div>
-                <div className='ProjectForm'>
-                    <Form onSubmit={this.handleSubmit}>
-                        <div className='row'>
-                            <div className="field">
-                                <label>
-                                    Name
-                                    <input
-                                        type="text"
-                                        name='name'
-                                        value={this.state.name}
-                                        onChange={this.handleChange}
-                                        required
-                                    />
-                                </label>
-                            </div>
-                            <div className="field">
-                                <label>
-                                    Priority:
-                                    <select
-                                        name='priority'
-                                        value={this.state.priority}
-                                        onChange={this.handleChange}
-                                        required
-                                    >
-                                        <option value='' disabled>Select priority</option>
-                                        <option value="low">Low</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="hard">Hard</option>
-                                    </select>    
-                                </label>
-                            </div>
-                        </div>
-
-                        <div className="field">
-                            <label>
-                                Description:
-                                <textarea
-                                    name='description'
-                                    value={this.state.description}
-                                    onChange={this.handleChange}
-                                    required
-                                />
-                            </label>
-                        </div>
-
-                        <div className="field">
-                            <label>
-                                Start:
-                                <input
-                                    type="date"
-                                    name='start'
-                                    value={this.state.start}
-                                    onChange={this.handleChange}
-                                    required
-                                />
-                            </label>
-                        </div>
-
-                        <div className="buttonContainer">
-                            <Button type="submit" color='green'>
-                                Crea
-                            </Button>
-                        </div>
-                    </Form>
-                </div>
+                <ProjectForm
+                    { ...this.state }
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                />
             </div>
         );
     }
