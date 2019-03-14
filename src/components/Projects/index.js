@@ -21,6 +21,10 @@ class Projects extends React.Component {
         });
         this.setState({ projects});
     }
+    addProject = item => {
+        this.setState(state => ({ projects: [...state.projects, item] }));
+        this.props.history.push(`/projects`);
+    }
     render() {
         return (
             <div className="Projects">
@@ -32,7 +36,9 @@ class Projects extends React.Component {
                         handleClick = {this.handleClick}
                     />
                 )} />
-                <Route path="/projects/add" component={ProjectInsert}/>
+                <Route path="/projects/add" render={() => (
+                    <ProjectInsert addProject={this.addProject} />
+                )} />
             </div>
         )
     }

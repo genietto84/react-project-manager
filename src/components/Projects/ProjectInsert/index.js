@@ -20,7 +20,11 @@ class ProjectInsert extends Component {
     }
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        const item = {
+            id: Math.random().toString(36).replace('0.', '').substring(2, 9),
+            ...this.state
+        };
+        this.props.addProject(item)
     }
     render() {
         return (
