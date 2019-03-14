@@ -10,7 +10,12 @@ import projects from './projects';
 class Projects extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { projects };
+        this.state = { projects: [] };
+    }
+    async componentDidMount() {
+        const resp = await fetch('http://localhost:3001/projects');
+        const projects = await resp.json();
+        this.setState({ projects })
     }
     handleClick = project => () => {
         const projects = this.state.projects.map(item => {
