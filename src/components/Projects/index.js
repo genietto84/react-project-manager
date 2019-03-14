@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import ProjectsHeader from './ProjectsHeader';
 import ProjectsGrid from './ProjectsGrid';
 import ProjectInsert from './ProjectInsert';
+import ProjectDetails from './ProjectDetails';
 import projects from './projects';
 
 class Projects extends React.Component {
@@ -25,6 +26,10 @@ class Projects extends React.Component {
         this.setState(state => ({ projects: [...state.projects, item] }));
         this.props.history.push(`/projects`);
     }
+    goToDetails = id => () => {
+        this.props.history.push(`/projects/details/${id}`);
+    }
+    getSelectedProject = _id => this.state.projects.find(({id}) => id===_id);
     render() {
         return (
             <div className="Projects">
@@ -33,11 +38,16 @@ class Projects extends React.Component {
                 <Route exact path="/projects" render={() => (
                     <ProjectsGrid
                         projects = {this.state.projects}
-                        handleClick = {this.handleClick}
+                        goToDetails = {this.goToDetails}
                     />
                 )} />
                 <Route path="/projects/add" render={() => (
                     <ProjectInsert addProject={this.addProject} />
+                )} />
+                <Route path="/projects/details/:id" render={(props) => (
+                    <ProjectDetails
+                        project={this.getSelectedProject(props.match.params.id)}
+                    />
                 )} />
             </div>
         )

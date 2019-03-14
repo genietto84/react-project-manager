@@ -9,6 +9,8 @@ class ProjectsHeader extends React.Component {
             return 'I miei progetti';
         else if (this.props.location.pathname==='/projects/add')
             return 'Nuovo progetto';
+        else if ((this.props.location.pathname).search('/projects/details') >= 0)
+            return 'Dettagli progetto';
     }
     getButtonText = () => {
         if (this.props.location.pathname==='/projects') return 'Aggiungi progetto';

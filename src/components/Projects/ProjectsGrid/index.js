@@ -8,7 +8,7 @@ const ProjectsGrid = props => (
             <ProjectCard
                 item = {item}
                 key = {item.id}
-                handleClick = {props.handleClick(item)}
+                handleClick = {props.goToDetails(item.id)}
             />
         ))}
     </div>

@@ -26,7 +26,7 @@ const ProjectCard = props => {
             </Card.Content>
             <Card.Content>
                 <Button fluid onClick={props.handleClick} color={color}>
-                    Switch stato
+                    Vai al progetto
                 </Button>
             </Card.Content>
         </Card>

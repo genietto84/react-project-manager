@@ -1,0 +1,14 @@
+.ProjectDetails {
+    background-color: rgb(240,240,240);
+    padding: 30px 60px;
+}
+.ProjectDetails > h1 > span {
+    color: grey;
+}
+.ProjectDetails > p.description {
+    font-size: 1.3rem;
+}
+.ProjectDetails > .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
