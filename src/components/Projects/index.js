@@ -34,6 +34,19 @@ class Projects extends React.Component {
         this.props.history.push(`/projects/update/${id}`);
     }
     getSelectedProject = _id => this.state.projects.find(({id}) => id===_id);
+    updateProject = project => {
+        const projects = this.state.projects.map(item => {
+            if (project.id === item.id)
+                return {
+                    ...item,
+                    ...project,
+                    done: project.end ? true : false
+                }
+            else return item;
+        })
+        this.setState({ projects });
+        this.props.history.push(`/projects/details/${project.id}`);
+    }
     render() {
         return (
             <div className="Projects">
@@ -57,6 +70,8 @@ class Projects extends React.Component {
                 <Route path="/projects/update/:id" component={(props) => (
                     <ProjectUpdate
                         project={this.getSelectedProject(props.match.params.id)}
+                        updateProject={this.updateProject}
+                        handleCancel={this.goToDetails(props.match.params.id)}
                     />
                 )} />
             </div>

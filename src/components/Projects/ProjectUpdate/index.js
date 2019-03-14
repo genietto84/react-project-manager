@@ -22,8 +22,7 @@ class ProjectUpdate extends Component {
     }
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.props.project);
-        console.log(this.state)
+        this.props.updateProject({ ...this.state });
     }
     render() {
         if (!this.props.project) return null;

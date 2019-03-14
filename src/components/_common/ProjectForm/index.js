@@ -61,7 +61,26 @@ const ProjectForm = props => (
                 </label>
             </div>
 
+            {(props.end || props.end==='') && 
+                <div className="field">
+                    <label>
+                        End:
+                        <input
+                            type="date"
+                            name='end'
+                            value={props.end}
+                            onChange={props.handleChange}
+                        />
+                    </label>
+                </div>
+            }
+
             <div className="buttonContainer">
+                {props.handleCancel &&
+                    <Button onClick={props.handleCancel}>
+                        Annulla
+                    </Button>
+                }
                 <Button type="submit" color='green'>
                     Crea
                 </Button>
