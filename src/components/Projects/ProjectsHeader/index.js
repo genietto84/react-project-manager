@@ -1,19 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import './index.css';
 
-const ProjectsHeader = props => (
-    <div className='ProjectsHeader'>
-        <h1>
-            {props.title}
-        </h1>
-        <Link to='/projects/add'>
-            <Button>
-                {props.buttonText}
-            </Button>
-        </Link>
-    </div>
-);
+class ProjectsHeader extends React.Component {
+    getTitle() {
+        if (this.props.location.pathname==='/projects')
+            return 'I miei progetti';
+        else if (this.props.location.pathname==='/projects/add')
+            return 'Nuovo progetto';
+    }
+    getButtonText = () => {
+        if (this.props.location.pathname==='/projects') return 'Aggiungi progetto';
+        else return 'Torna a progetti';
+    }
+    handlePress = () => {
+        if (this.props.location.pathname==='/projects') this.props.history.push('/projects/add');
+        else this.props.history.push('/projects');
+    }
+    render() {
+        return (
+            <div className='ProjectsHeader'>
+                <h1>
+                    {this.getTitle()}
+                </h1>
+                <Button
+                    onClick={this.handlePress}
+                    basic={this.props.location.pathname==='/projects' ? false : true}
+                >
+                    {this.getButtonText()}
+                </Button>
+            </div>
+        )
+    }
+}
 
-export default ProjectsHeader;
+export default withRouter(ProjectsHeader);
