@@ -13,7 +13,7 @@ class App extends Component {
                     
                     <div className="content">
                         <div className="wrapper">
-                            <Projects />
+                            <Route path="/projects" component={Projects} />
                         </div>
                     </div>
                 </div>
