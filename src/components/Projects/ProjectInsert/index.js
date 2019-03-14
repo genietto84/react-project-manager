@@ -7,7 +7,8 @@ class ProjectInsert extends Component {
         super(props);
         this.state = {
             name: '',
-            priority: ''
+            priority: '',
+            description: ''
         }
     }
     handleChange = event => {
@@ -54,6 +55,18 @@ class ProjectInsert extends Component {
                                     </select>    
                                 </label>
                             </div>
+                        </div>
+
+                        <div className="field">
+                            <label>
+                                Description:
+                                <textarea
+                                    name='description'
+                                    value={this.state.description}
+                                    onChange={this.handleChange}
+                                    required
+                                />
+                            </label>
                         </div>
 
                         <div className="buttonContainer">
