@@ -4,6 +4,7 @@ import ProjectsHeader from './ProjectsHeader';
 import ProjectsGrid from './ProjectsGrid';
 import ProjectInsert from './ProjectInsert';
 import ProjectDetails from './ProjectDetails';
+import ProjectUpdate from './ProjectUpdate';
 import projects from './projects';
 
 class Projects extends React.Component {
@@ -29,6 +30,9 @@ class Projects extends React.Component {
     goToDetails = id => () => {
         this.props.history.push(`/projects/details/${id}`);
     }
+    goToUpdate = id => () => {
+        this.props.history.push(`/projects/update/${id}`);
+    }
     getSelectedProject = _id => this.state.projects.find(({id}) => id===_id);
     render() {
         return (
@@ -46,6 +50,12 @@ class Projects extends React.Component {
                 )} />
                 <Route path="/projects/details/:id" render={(props) => (
                     <ProjectDetails
+                        project={this.getSelectedProject(props.match.params.id)}
+                        goToUpdate={this.goToUpdate(props.match.params.id)}
+                    />
+                )} />
+                <Route path="/projects/update/:id" component={(props) => (
+                    <ProjectUpdate
                         project={this.getSelectedProject(props.match.params.id)}
                     />
                 )} />
