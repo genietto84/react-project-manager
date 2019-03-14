@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 const Header = props => (
     <header className='Header'>
-        <a href="/">
+        <Link to="/">
             {props.title.toUpperCase()}
-        </a>
+        </Link>
         <nav>
             <ul>    
                 <li>
-                    <a href="/">
+                    <Link to="/projects">
                         {props.nav}
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>
