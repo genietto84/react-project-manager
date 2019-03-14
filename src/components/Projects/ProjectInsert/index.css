@@ -1,0 +1,14 @@
+.ProjectForm form .row {
+    display: flex;
+}
+.ProjectForm form .field {
+    flex: 1;
+    margin: 10px !important;
+}
+.ProjectForm form .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    margin-top: 20px;
+}
+    
